@@ -44,7 +44,7 @@ int is_equal(void* key1, void* key2)
 void insertMap(HashMap * map, char * key, void * value) 
 {
     long clave = hash(key, map->capacity);
-    if (map->buckets[clave]->value != NULL && map->buckets[clave]->key != NULL)
+    if (map->buckets[clave]->value == NULL && map->buckets[clave]->key == NULL)
     {
         map->buckets[clave]->key = key;
         map->buckets[clave]->value = value;
@@ -54,7 +54,7 @@ void insertMap(HashMap * map, char * key, void * value)
     {
         for (int i = clave ; i < map->capacity ; i = i + 1)//Hacer un while y ir comparando el current con la clave a la que se ingreso
         {
-            if (map->buckets[i]->value != NULL && map->buckets[i]->key != NULL)
+            if (map->buckets[i]->value == NULL && map->buckets[i]->key == NULL)
             {
                 map->buckets[clave]->key = key;
                 map->buckets[clave]->value = value;
