@@ -43,34 +43,48 @@ int is_equal(void* key1, void* key2)
 
 void insertMap(HashMap * map, char * key, void * value) 
 {
-    long clave = hash(key, map->capacity);
-    float porcentaje;
-    Pair* datos = createPair(key, value);
+  long clave = hash(key, map->capacity);
+  float porcentaje;
+  map->size = map->size + 1;
+  porcentaje = (map->size / map->capacity);
 
-    while (map->buckets[clave] != NULL && map->buckets[clave]->key != NULL)
-    {
-        if (is_equal(key, map->buckets[clave]->key) == 1)
-        {
-            break;
-        }
-        clave = (clave + 1) % map->capacity;//Se recorre el arrgelo circular
-    }
-    if (map->buckets[clave]->key != key)
-    {
-        map->buckets[clave] = datos;
-    }
+  if (porcentaje > 0.70)
+  {
+    enlarge(map);
+  }
 
-    map->size = map->size + 1;
-    porcentaje = map->size / map->capacity;
-    if (porcentaje > 0.70)
+  while (map->buckets[clave] != NULL && map->buckets[clave]->key != NULL)
+  {
+    if (is_equal(key, map->buckets[clave]->key) == 1)
     {
-        enlarge(map);
+        break;
     }
+    clave = (clave + 1) % map->capacity;//Se recorre el arrgelo circular
+  }
+  if (map->buckets[clave] != NULL)
+  {
+    map->buckets[clave]->key = key;
+    map->buckets[clave]->value = value;
+  }
+  else
+  {
+    map->buckets[clave] = createPair(key, value);
+  }
 }
 
 void enlarge(HashMap * map) 
 {
-    enlarge_called = 1; //no borrar (testing purposes)
+  /*
+  enlarge_called = 1; //no borrar (testing purposes)
+  Pair** oldBucket = (Pair**) calloc ((map->capacity), sizeof(Pair*));
+  
+  for (int i = 0 ; i < map->capacity ; i = i + 1)
+  {
+    oldBucket[i] = map->buckets[i];      
+  }
+  map->capacity = map->capacity * 2;
+  Pair** newBucket = (Pair**) calloc ((map->capacity), sizeof(Pair*));
+  map->buckets = newBucket;*/
 
 }
 
@@ -88,31 +102,37 @@ HashMap * createMap(long capacity)
 void eraseMap(HashMap * map,  char * key) 
 {    
     long clave = hash(key, map->capacity);
-    while(map->buckets[clave]->key != NULL)
+    while( map->buckets[clave] != NULL && map->buckets[clave]->key != NULL)
     {
-        if (is_equal(map->buckets[clave]->key, key) == 1)
-        {
-            map->current = clave;
-            map->buckets[clave]->key = NULL;
-            map->size = map->size - 1;
-        }
-        clave = (clave + 1) % map->capacity;
+      if (is_equal(map->buckets[clave]->key, key) == 1)
+      {
+        map->buckets[clave]->key = NULL;
+        map->current = clave;
+        map->size = map->size - 1;
+      }
+      clave = (clave + 1) % map->capacity;
     }
 }
 
 Pair * searchMap(HashMap * map,  char * key) 
 {   
     long clave = hash(key, map->capacity);
-    if (is_equal(map->buckets[clave]->key, key) == 1)
+    while (map->buckets[clave] != NULL && map->buckets[clave]->key != NULL)
     {
-        return (map->buckets[clave]->value);
+      if (is_equal(key, map->buckets[clave]->key) == 1)
+      {
+        map->current = clave;
+        return (map->buckets[clave]);
+      }
+      clave = (clave + 1) % map->capacity;
     }
+    
     return NULL;
 }
 
 Pair * firstMap(HashMap * map) 
 {
-    for (int i = 0 ; i < map->size ; i = i + 1)
+    for (int i = 0 ; i < map->capacity ; i = i + 1)
     {
         if (map->buckets[i] != NULL && map->buckets[i]->key != NULL)
         {
@@ -125,7 +145,13 @@ Pair * firstMap(HashMap * map)
 
 Pair * nextMap(HashMap * map) 
 {
-    map->current = map->current + 1;
-    return map->buckets[map->current];
-    return NULL;
+  for (long clave = map->current ; clave < map->capacity ; clave = clave + 1)
+  {
+    if (map->buckets[clave] != NULL && map->buckets[clave]->key != NULL && clave != map->current)
+    {
+      map->current = clave;
+      return map->buckets[clave];
+    }
+  }
+  return NULL;
 }
