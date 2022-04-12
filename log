@@ -32,6 +32,420 @@ test.c:442:17: error: passing argument 1 to restrict-qualified parameter aliases
 cc1.exe: all warnings being treated as errors
 Compilation failed
 600aa2c
+<<<<<<< HEAD
+Fri Apr  8 22:37:12 UTC 2022: 
+ tests:  0|0
+5204013
+Fri Apr  8 22:40:55 UTC 2022: 
+ hashmap.c | 20 ++++++++++++--------
+ 1 file changed, 12 insertions(+), 8 deletions(-)
+ tests:  0|0
+8232c59
+Fri Apr  8 22:44:54 UTC 2022: 
+ hashmap.c | 8 +++++++-
+ 1 file changed, 7 insertions(+), 1 deletion(-)
+ tests:  0|0
+87c7bc5
+Fri Apr  8 22:46:10 UTC 2022: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  0|0
+d23ce3a
+Fri Apr  8 22:46:58 UTC 2022: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  0|0
+ac30411
+Fri Apr  8 22:54:03 UTC 2022: 
+ hashmap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+ tests:  13|2
+total_score: 50/70
+6466d76
+Fri Apr  8 22:56:34 UTC 2022: 
+ hashmap.c | 10 ++++++++--
+ 1 file changed, 8 insertions(+), 2 deletions(-)
+ tests:  13|2
+total_score: 50/70
+b2a576a
+Fri Apr  8 22:59:28 UTC 2022: 
+ hashmap.c | 10 ++++++----
+ 1 file changed, 6 insertions(+), 4 deletions(-)
+ tests:  13|2
+total_score: 50/70
+7ea64a1
+Fri Apr  8 23:02:46 UTC 2022: 
+ hashmap.c | 13 +++++++++++--
+ 1 file changed, 11 insertions(+), 2 deletions(-)
+ tests:  13|2
+total_score: 50/70
+2a583b4
+Fri Apr  8 23:03:20 UTC 2022: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  13|2
+total_score: 50/70
+c31f973
+Fri Apr  8 23:03:30 UTC 2022: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  13|2
+total_score: 50/70
+b42e406
+Fri Apr  8 23:12:02 UTC 2022: 
+ hashmap.c | 4 ++++
+ 1 file changed, 4 insertions(+)
+In file included from test.c:4:0:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:81:63: error: expected ‘)’ before ‘sizeof’
+   map->buckets = (Pair*)realloc((map->buckets), map->capacity sizeof(Pair**));
+                                                               ^~~~~~
+hashmap.c:81:16: error: assignment from incompatible pointer type [-Werror=incompatible-pointer-types]
+   map->buckets = (Pair*)realloc((map->buckets), map->capacity sizeof(Pair**));
+                ^
+hashmap.c:78:10: error: variable ‘tmp’ set but not used [-Werror=unused-but-set-variable]
+   Pair** tmp; //= (Pair*) calloc (map->capacity, sizeof(Pair**));
+          ^~~
+cc1: all warnings being treated as errors
+Compilation failed
+076e425
+Fri Apr  8 23:12:14 UTC 2022: 
+ hashmap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:4:0:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:81:63: error: expected ‘)’ before ‘sizeof’
+   map->buckets = (Pair*)realloc((map->buckets), map->capacity sizeof(Pair**));
+                                                               ^~~~~~
+hashmap.c:81:16: error: assignment from incompatible pointer type [-Werror=incompatible-pointer-types]
+   map->buckets = (Pair*)realloc((map->buckets), map->capacity sizeof(Pair**));
+                ^
+cc1: all warnings being treated as errors
+Compilation failed
+66aa265
+Fri Apr  8 23:12:34 UTC 2022: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:0:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:81:49: error: expected ‘)’ before ‘sizeof’
+    (Pair*)realloc((map->buckets), map->capacity sizeof(Pair**));
+                                                 ^~~~~~
+hashmap.c:81:4: error: ignoring return value of ‘realloc’, declared with attribute warn_unused_result [-Werror=unused-result]
+    (Pair*)realloc((map->buckets), map->capacity sizeof(Pair**));
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+e364409
+Fri Apr  8 23:13:10 UTC 2022: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:0:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:81:16: error: assignment from incompatible pointer type [-Werror=incompatible-pointer-types]
+   map->buckets = (Pair*)realloc((map->buckets), map->capacity *sizeof(Pair**));
+                ^
+cc1: all warnings being treated as errors
+Compilation failed
+867f9f6
+Fri Apr  8 23:13:27 UTC 2022: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  13|2
+total_score: 50/70
+3fec80e
+Fri Apr  8 23:32:13 UTC 2022: 
+ hashmap.c | 17 ++++++++++++-----
+ 1 file changed, 12 insertions(+), 5 deletions(-)
+ tests:  0|0
+29a778e
+Fri Apr  8 23:32:35 UTC 2022: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  0|0
+d114915
+Fri Apr  8 23:32:59 UTC 2022: 
+ hashmap.c | 9 +++------
+ 1 file changed, 3 insertions(+), 6 deletions(-)
+ tests:  0|0
+f2c20cb
+Fri Apr  8 23:33:19 UTC 2022: 
+ hashmap.c | 11 ++++++-----
+ 1 file changed, 6 insertions(+), 5 deletions(-)
+ tests:  0|0
+1834b5a
+Fri Apr  8 23:33:43 UTC 2022: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  0|0
+ee44e64
+Fri Apr  8 23:36:06 UTC 2022: 
+ hashmap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+ tests:  0|0
+9ce8979
+Fri Apr  8 23:37:34 UTC 2022: 
+ hashmap.c | 5 +----
+ 1 file changed, 1 insertion(+), 4 deletions(-)
+ tests:  0|0
+723a052
+Fri Apr  8 23:37:43 UTC 2022: 
+ hashmap.c | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+ tests:  0|0
+4cabc73
+Fri Apr  8 23:41:42 UTC 2022: 
+ hashmap.c | 16 +++-------------
+ 1 file changed, 3 insertions(+), 13 deletions(-)
+ tests:  0|0
+ccb70c3
+Fri Apr  8 23:43:59 UTC 2022: 
+ hashmap.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+ tests:  0|0
+08479a7
+Fri Apr  8 23:47:23 UTC 2022: 
+ hashmap.c | 8 ++++++--
+ 1 file changed, 6 insertions(+), 2 deletions(-)
+In file included from test.c:4:0:
+test.c: In function ‘nextMap’:
+hashmap.c:147:23: error: ‘clave’ is used uninitialized in this function [-Werror=uninitialized]
+   long clave = (clave + 1) % map->capacity;
+                ~~~~~~~^~~~
+cc1: all warnings being treated as errors
+Compilation failed
+f534016
+Fri Apr  8 23:47:52 UTC 2022: 
+ hashmap.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+ tests:  0|0
+85d97f7
+Fri Apr  8 23:48:17 UTC 2022: 
+ hashmap.c | 1 +
+ 1 file changed, 1 insertion(+)
+In file included from test.c:4:0:
+hashmap.c: In function ‘nextMap’:
+hashmap.c:149:3: error: implicit declaration of function ‘prinf’; did you mean ‘printf’? [-Werror=implicit-function-declaration]
+   prinf("%l", clave);
+   ^~~~~
+   printf
+cc1: all warnings being treated as errors
+Compilation failed
+c385f33
+Fri Apr  8 23:48:25 UTC 2022: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:0:
+hashmap.c: In function ‘nextMap’:
+hashmap.c:149:12: error: conversion lacks type at end of format [-Werror=format=]
+   printf("%l", clave);
+            ^
+hashmap.c:149:10: error: too many arguments for format [-Werror=format-extra-args]
+   printf("%l", clave);
+          ^~~~
+cc1: all warnings being treated as errors
+Compilation failed
+6e6d8c1
+Fri Apr  8 23:48:53 UTC 2022: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  0|0
+d5cecbe
+Fri Apr  8 23:57:52 UTC 2022: 
+ hashmap.c | 9 +--------
+ 1 file changed, 1 insertion(+), 8 deletions(-)
+ tests:  0|0
+d955f53
+Fri Apr  8 23:58:42 UTC 2022: 
+ hashmap.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+ tests:  0|0
+c0364cf
+Fri Apr  8 23:59:30 UTC 2022: 
+ hashmap.c | 7 +++----
+ 1 file changed, 3 insertions(+), 4 deletions(-)
+ tests:  0|0
+fe6c0a5
+Fri Apr  8 23:59:41 UTC 2022: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  0|0
+e5d046d
+Sat Apr  9 00:00:27 UTC 2022: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  0|0
+070d24b
+Sat Apr  9 00:01:00 UTC 2022: 
+ hashmap.c | 1 +
+ 1 file changed, 1 insertion(+)
+ tests:  0|0
+b0917d7
+Sat Apr  9 00:01:18 UTC 2022: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  0|0
+275fc0d
+Sat Apr  9 00:01:28 UTC 2022: 
+ hashmap.c | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+In file included from test.c:4:0:
+hashmap.c: In function ‘nextMap’:
+hashmap.c:148:65: error: lvalue required as left operand of assignment
+   while (map->buckets[clave] = NULL && map->buckets[clave]->key = NULL)
+                                                                 ^
+Compilation failed
+327ccb0
+Sat Apr  9 00:01:41 UTC 2022: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:0:
+hashmap.c: In function ‘nextMap’:
+hashmap.c:148:30: error: assignment makes pointer from integer without a cast [-Werror=int-conversion]
+   while (map->buckets[clave] = NULL && map->buckets[clave]->key == NULL)
+                              ^
+hashmap.c:148:10: error: suggest parentheses around assignment used as truth value [-Werror=parentheses]
+   while (map->buckets[clave] = NULL && map->buckets[clave]->key == NULL)
+          ^~~
+cc1: all warnings being treated as errors
+Compilation failed
+ef45ba2
+Sat Apr  9 00:01:44 UTC 2022: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  0|0
+a905e15
+Sat Apr  9 00:02:05 UTC 2022: 
+ hashmap.c | 1 +
+ 1 file changed, 1 insertion(+)
+ tests:  0|0
+1781d61
+Sat Apr  9 00:02:46 UTC 2022: 
+ hashmap.c | 5 +++++
+ 1 file changed, 5 insertions(+)
+ tests:  0|0
+90425c5
+Sat Apr  9 00:04:11 UTC 2022: 
+ hashmap.c | 14 +++++++++-----
+ 1 file changed, 9 insertions(+), 5 deletions(-)
+ tests:  0|0
+07db12e
+Sat Apr  9 00:04:31 UTC 2022: 
+ hashmap.c | 1 +
+ 1 file changed, 1 insertion(+)
+ tests:  0|0
+7740ece
+Sat Apr  9 00:05:00 UTC 2022: 
+ hashmap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+ tests:  0|0
+6ada849
+Sat Apr  9 00:05:17 UTC 2022: 
+ hashmap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+ tests:  0|0
+ebd7b51
+Sat Apr  9 00:05:38 UTC 2022: 
+ hashmap.c | 1 +
+ 1 file changed, 1 insertion(+)
+ tests:  0|0
+96bfa09
+Sat Apr  9 00:06:06 UTC 2022: 
+ hashmap.c | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+ tests:  0|0
+b5ac1d8
+Sat Apr  9 00:06:31 UTC 2022: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:0:
+hashmap.c: In function ‘nextMap’:
+hashmap.c:148:3: error: statement with no effect [-Werror=unused-value]
+   for (clave ; i < map->capacity ; i = i + 1)
+   ^~~
+hashmap.c:148:16: error: ‘i’ undeclared (first use in this function)
+   for (clave ; i < map->capacity ; i = i + 1)
+                ^
+hashmap.c:148:16: note: each undeclared identifier is reported only once for each function it appears in
+cc1: all warnings being treated as errors
+Compilation failed
+f79a088
+Sat Apr  9 00:06:45 UTC 2022: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:0:
+hashmap.c: In function ‘nextMap’:
+hashmap.c:148:3: error: statement with no effect [-Werror=unused-value]
+   for (clave ; clave < map->capacity ; clave = clave + 1)
+   ^~~
+hashmap.c:151:26: error: ‘i’ undeclared (first use in this function)
+         if (map->buckets[i] != NULL && map->buckets[i]->key != NULL && clave != map->current)
+                          ^
+hashmap.c:151:26: note: each undeclared identifier is reported only once for each function it appears in
+cc1: all warnings being treated as errors
+Compilation failed
+9a7599e
+Sat Apr  9 00:07:03 UTC 2022: 
+ hashmap.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+In file included from test.c:4:0:
+hashmap.c: In function ‘nextMap’:
+hashmap.c:148:3: error: statement with no effect [-Werror=unused-value]
+   for (clave ; clave < map->capacity ; clave = clave + 1)
+   ^~~
+cc1: all warnings being treated as errors
+Compilation failed
+40c1387
+Sat Apr  9 00:07:53 UTC 2022: 
+ hashmap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+ tests:  0|0
+eba067c
+Sat Apr  9 00:08:15 UTC 2022: 
+ hashmap.c | 1 -
+ 1 file changed, 1 deletion(-)
+ tests:  0|0
+b6bbb35
+Sat Apr  9 00:08:45 UTC 2022: 
+ hashmap.c | 1 +
+ 1 file changed, 1 insertion(+)
+ tests:  0|0
+956b575
+Sat Apr  9 00:09:07 UTC 2022: 
+ hashmap.c | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+ tests:  0|0
+73c3e03
+Sat Apr  9 00:10:43 UTC 2022: 
+ hashmap.c | 15 ++-------------
+ 1 file changed, 2 insertions(+), 13 deletions(-)
+ tests:  16|1
+total_score: 60/70
+0df108c
+Sat Apr  9 02:06:39 UTC 2022: 
+ hashmap.c | 2 ++
+ 1 file changed, 2 insertions(+)
+ tests:  16|1
+total_score: 60/70
+0d4fa35
+Sat Apr  9 02:07:23 UTC 2022: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:0:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:78:16: error: assignment from incompatible pointer type [-Werror=incompatible-pointer-types]
+   map->buckets = (Pair***) realloc ((map->buckets), (map->capacity*2) *sizeof(Pair**));
+                ^
+cc1: all warnings being treated as errors
+Compilation failed
+a1a5014
+Sat Apr  9 02:07:32 UTC 2022: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  16|1
+total_score: 60/70
+a8f3489
+=======
 Fri Apr  8 21:34:56 HSP 2022: 
  hashmap.c | 56 +++++++++++++++++++++++++++++++++++++++++---------------
  1 file changed, 41 insertions(+), 15 deletions(-)
@@ -51,6 +465,145 @@ test.c:442:17: error: passing argument 1 to restrict-qualified parameter aliases
 cc1.exe: all warnings being treated as errors
 Compilation failed
 5204013
+<<<<<<< HEAD
+>>>>>>> 1a8b6527ecba861994b6b1f4abaa41980a2b12e0
+Sat Apr  9 02:50:43 UTC 2022: 
+ hashmap.c | Unmerged
+ hashmap.c | 20 +++++++++++---------
+ 1 file changed, 11 insertions(+), 9 deletions(-)
+In file included from test.c:4:0:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:90:31: error: ‘*oldBucket’ is a pointer; did you mean to use ‘->’?
+       insertMap(map, oldBucket->key, oldBucket->value);
+                               ^~
+                               ->
+hashmap.c:90:47: error: ‘*oldBucket’ is a pointer; did you mean to use ‘->’?
+       insertMap(map, oldBucket->key, oldBucket->value);
+                                               ^~
+                                               ->
+hashmap.c:78:8: error: unused variable ‘oldSize’ [-Werror=unused-variable]
+   long oldSize = map->capacity;
+        ^~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+99e372b
+Sat Apr  9 02:53:06 UTC 2022: 
+ hashmap.c | 7 +++----
+ 1 file changed, 3 insertions(+), 4 deletions(-)
+In file included from test.c:4:0:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:89:31: error: ‘*oldBucket’ is a pointer; did you mean to use ‘->’?
+       insertMap(map, oldBucket->key, oldBucket->value);
+                               ^~
+                               ->
+hashmap.c:89:47: error: ‘*oldBucket’ is a pointer; did you mean to use ‘->’?
+       insertMap(map, oldBucket->key, oldBucket->value);
+                                               ^~
+                                               ->
+Compilation failed
+47e3a99
+Sat Apr  9 02:55:36 UTC 2022: 
+ hashmap.c | 5 ++---
+ 1 file changed, 2 insertions(+), 3 deletions(-)
+In file included from test.c:4:0:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:88:31: error: ‘*oldBucket’ is a pointer; did you mean to use ‘->’?
+       insertMap(map, oldBucket->key, oldBucket->value);
+                               ^~
+                               ->
+hashmap.c:88:47: error: ‘*oldBucket’ is a pointer; did you mean to use ‘->’?
+       insertMap(map, oldBucket->key, oldBucket->value);
+                                               ^~
+                                               ->
+Compilation failed
+638f279
+Sat Apr  9 03:36:47 UTC 2022: 
+ hashmap.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+ tests:  0|0
+8669a3d
+Sat Apr  9 03:37:48 UTC 2022: 
+ hashmap.c | 3 +++
+ 1 file changed, 3 insertions(+)
+In file included from test.c:4:0:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:81:22: error: ‘clave’ undeclared (first use in this function)
+     if (map->buckets[clave] != NULL && map->buckets[clave]->key != NULL)
+                      ^~~~~
+hashmap.c:81:22: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+804f760
+Sat Apr  9 03:37:57 UTC 2022: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  0|0
+25d39e2
+Sat Apr  9 03:39:08 UTC 2022: 
+ hashmap.c | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+ tests:  0|0
+cb4bb51
+Sat Apr  9 03:39:46 UTC 2022: 
+ hashmap.c | 3 +++
+ 1 file changed, 3 insertions(+)
+ tests:  0|0
+8a2798b
+Sat Apr  9 03:43:13 UTC 2022: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  0|0
+4ccf161
+Sat Apr  9 03:43:53 UTC 2022: 
+ hashmap.c | 5 ++---
+ 1 file changed, 2 insertions(+), 3 deletions(-)
+ tests:  0|0
+60b6410
+Sat Apr  9 03:44:30 UTC 2022: 
+ hashmap.c | 1 +
+ 1 file changed, 1 insertion(+)
+In file included from test.c:4:0:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:83:16: error: format ‘%s’ expects argument of type ‘char *’, but argument 2 has type ‘void *’ [-Werror=format=]
+       printf("%s\n", map->buckets[i]->value);
+               ~^     ~~~~~~~~~~~~~~~~~~~~~~
+               %p
+cc1: all warnings being treated as errors
+Compilation failed
+c1891ac
+Sat Apr  9 03:44:38 UTC 2022: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  0|0
+21c5172
+Sat Apr  9 03:45:17 UTC 2022: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  0|0
+9a6de16
+Sat Apr  9 03:45:49 UTC 2022: 
+ hashmap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:4:0:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:90:22: error: comparison between pointer and integer [-Werror]
+   for (int i = 0 ; i < oldBucket ; i = i + 1)
+                      ^
+cc1: all warnings being treated as errors
+Compilation failed
+b4aa404
+Sat Apr  9 03:46:05 UTC 2022: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  17|0
+total_score: 70/70
+2bc0c1a
+Sat Apr  9 03:50:43 UTC 2022: 
+ hashmap.c | 1 -
+ 1 file changed, 1 deletion(-)
+ tests:  17|0
+total_score: 70/70
+cad2c64
+=======
 Fri Apr  8 23:51:22 HSP 2022: 
  hashmap.c | 21 +++++++++++++++------
  1 file changed, 15 insertions(+), 6 deletions(-)
@@ -70,3 +623,4 @@ test.c:442:17: error: passing argument 1 to restrict-qualified parameter aliases
 cc1.exe: all warnings being treated as errors
 Compilation failed
 1a8b652
+>>>>>>> aff94eb8fd7fbfba481ca42c7887c4f469b86dc0
